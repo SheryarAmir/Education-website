@@ -8,9 +8,14 @@ import Campus from './Compounents/Campus/Campus';
 import Testimonials from "./Compounents/Testimonials/Testimonials"
 import Contact from './Compounents/Contact/Contact';
 import Footer from './Compounents/Footer/Footer';
+import VideoPlayer from './Compounents/VideoPlayer/VideoPlayer';
 
 function App() {
-  const [count, setCount] = useState(0);
+
+
+  const [playState, setPlayState] = useState(false);
+
+
 
   return (
     <>
@@ -19,7 +24,7 @@ function App() {
       <div className="container">
         <Tittle subTittle='OUR programs'  Tittle='What We Offer' />
       <Programs/>
-      <About/>
+      <About setPlayState={setPlayState}/>
       <Tittle subTittle='Gallery'  Tittle='Campus photos' />
       <Campus/>
       <Tittle subTittle='TESTIMONIALS'  Tittle='What Student Says ' />
@@ -28,7 +33,7 @@ function App() {
       <Contact/>
       <Footer/>
       </div>
-  
+  <VideoPlayer playState={playState}  setPlayState={setPlayState} />
     </>
   );
 }
